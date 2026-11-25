@@ -4,7 +4,6 @@
 눈여겨본 오픈소스와 도구, 개발하면서 정리한 내용을 기록합니다.
 
 - **Blog:** https://justicehong.github.io/blog/
-- **Portfolio:** https://justicehong.github.io/web-porfolio/
 
 ## 구성
 
@@ -13,8 +12,17 @@
 | `_posts/` | 게시물 (마크다운). 파일 하나가 글 하나 |
 | `_layouts/` | 공통 틀(`default.html`)과 글 상세(`post.html`) |
 | `index.html` | 글 목록 (최신순) |
-| `assets/css/main.css` | 전체 스타일. 포트폴리오와 같은 톤(#3e64ff, Poppins + Noto Sans KR) |
+| `assets/css/main.css` | 전체 스타일. 색·글꼴·간격은 파일 맨 위 CSS 변수(`:root`)에서 관리 |
 | `_config.yml` | 사이트 제목·주소·작성자 정보 |
+
+## 디자인
+
+Claude 디자인 문서(DESIGN.md)의 토큰을 따릅니다.
+
+- 크림 캔버스(`#faf9f5`)에 따뜻한 잉크색 글자, 코랄은 본문 링크와 주요 버튼에만 사용
+- 제목은 세리프(굵기 400), 본문은 산세리프, 코드는 JetBrains Mono
+- 그림자 대신 면 색으로 구분: 크림 → 크림 카드 → 다크 코드 창 → 다크 푸터
+- Copernicus / StyreneB는 공개 웹폰트가 아니어서 Source Serif 4 + Noto Serif KR, Inter + Noto Sans KR로 대체
 
 ## 글 쓰는 방법
 

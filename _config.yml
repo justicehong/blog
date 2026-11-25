@@ -16,7 +16,6 @@ author:
   name: 홍정의
   role: 서버·백엔드 개발자
   github: justicehong
-  portfolio: https://justicehong.github.io/web-porfolio/
 
 # 글 주소: /blog/posts/파일명의-제목-부분/
 permalink: /posts/:title/

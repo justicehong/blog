@@ -5,22 +5,15 @@ layout: default
 {%- assign minutes = chars | divided_by: 550 | floor | plus: 1 -%}
 <article class="post">
 	<header class="post-header">
-		<a class="back-link" href="{{ '/' | relative_url }}">← 글 목록</a>
-		{%- if page.tags.size > 0 %}
-		<ul class="tag-list" aria-label="태그">
-			{%- for tag in page.tags %}
-			<li>{{ tag }}</li>
-			{%- endfor %}
-		</ul>
-		{%- endif %}
+		<a class="back-link" href="{{ '/' | relative_url }}">글 목록으로</a>
+		<p class="post-meta">
+			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y년 %-m월 %-d일' }}</time>
+			<span>읽는 데 약 {{ minutes }}분</span>
+		</p>
 		<h1 class="post-title">{{ page.title }}</h1>
 		{%- if page.description %}
 		<p class="post-lead">{{ page.description }}</p>
 		{%- endif %}
-		<p class="post-meta">
-			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
-			<span aria-hidden="true">·</span> 읽는 시간 약 {{ minutes }}분
-		</p>
 	</header>
 
 	<div class="post-content">
@@ -28,23 +21,29 @@ layout: default
 	</div>
 
 	<footer class="post-footer">
+		{%- if page.tags.size > 0 %}
+		<ul class="badge-list" aria-label="태그">
+			{%- for tag in page.tags %}
+			<li class="badge-pill">{{ tag }}</li>
+			{%- endfor %}
+		</ul>
+		{%- endif %}
 		<div class="author-card">
 			<span class="author-mark" aria-hidden="true">J</span>
-			<div>
-				<strong>{{ site.author.name }}</strong>
-				<span>{{ site.author.role }}</span>
+			<div class="author-text">
+				<span class="author-name">{{ site.author.name }}</span>
+				<span class="author-role">{{ site.author.role }}</span>
 			</div>
-			<a class="btn-outline" href="{{ site.author.portfolio }}">포트폴리오 보기</a>
 		</div>
+		{%- if page.previous or page.next %}
 		<nav class="post-nav" aria-label="이전·다음 글">
 			{%- if page.previous %}
 			<a class="post-nav-item" href="{{ page.previous.url | relative_url }}"><span>이전 글</span>{{ page.previous.title }}</a>
-			{%- else %}
-			<span></span>
 			{%- endif %}
 			{%- if page.next %}
 			<a class="post-nav-item is-next" href="{{ page.next.url | relative_url }}"><span>다음 글</span>{{ page.next.title }}</a>
 			{%- endif %}
 		</nav>
+		{%- endif %}
 	</footer>
 </article>
