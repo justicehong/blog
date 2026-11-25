@@ -1,0 +1,39 @@
+# 사이트 기본 정보
+title: Justice Hong · Dev Notes
+tagline: 개발하면서 찾아보고 정리한 것들
+description: >-
+  서버·백엔드 개발자 홍정의의 기술 블로그입니다.
+  눈여겨본 오픈소스와 도구, 개발하면서 정리한 내용을 기록합니다.
+lang: ko
+timezone: Asia/Seoul
+
+# GitHub Pages 주소: https://justicehong.github.io/blog/
+# 레포 이름을 바꾸면 baseurl도 "/새이름"으로 함께 바꿔야 합니다.
+url: "https://justicehong.github.io"
+baseurl: "/blog"
+
+author:
+  name: 홍정의
+  role: 서버·백엔드 개발자
+  github: justicehong
+  portfolio: https://justicehong.github.io/web-porfolio/
+
+# 글 주소: /blog/posts/파일명의-제목-부분/
+permalink: /posts/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+
+# GitHub Pages가 기본 지원하는 플러그인만 사용 (별도 빌드 설정 불필요)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
